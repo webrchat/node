@@ -157,7 +157,6 @@ function deleteUser(user) {
      }
      users.splice(index,1);
 }
-
-http.listen(5000, function(){
-  console.log('listening on *: 5000');
-});
+var ipaddr =process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1" ;
+var port =process.env.OPENSHIFT_NODEJS_PORT || 8080    
+http.listen(port,ipaddr);
