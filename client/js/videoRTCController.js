@@ -2,7 +2,13 @@ function VideoRTCController() {
 
     var that = this;
     var connection = false;
-    var peerConfig =   {iceServers: [] };
+    var peerConfig =   {iceServers: [
+        {url: "stun:23.21.150.121"},
+		{url: "stun:stun.l.google.com:19302"},
+		{url: "turn:numb.viagenie.ca", credential: "webrtcdemo", username: "louis%40mozilla.com"}
+        
+        
+        ] };
     var othersSDPs = [];
     var othersCandidates = [];
     var connections = [];
